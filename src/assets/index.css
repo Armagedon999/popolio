@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #0e1115;
+    --secondary: #6b7280;
+    --accent: #060509;
+    --neutral: #1f2937;
+    --base-100: #3b3636;
+    --base-200: #f3f4f6;
+    --base-300: #e5e7eb;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-opacity-90;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-opacity-90;
+  }
+
+  /* Mobile Navigation Styles */
+  .btm-nav {
+    @apply flex flex-row items-center;
+    height: 4rem;
+  }
+  
+  .btm-nav a {
+    @apply flex flex-col items-center justify-center;
+    height: 100%;
+  }
+}

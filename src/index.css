@@ -1,0 +1,144 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* Add Devicon styles */
+@import 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css';
+
+/* Light Mode Styles */
+[data-theme="light"] {
+  /* Main Colors - Monochromatic */
+  --primary: #333333;
+  --secondary: #666666;
+  --accent: #999999;
+  --bg-base: #f9f9f9;
+  --bg-base-100: #ffffff;
+  --bg-base-200: #f3f4f6;
+  --text-base: #333333;
+  --text-base-content: #333333;
+  
+  /* Navigation */
+  --nav-bg: #ffffff;
+  --nav-hover: #333333;
+  --nav-active: #333333;
+  --nav-text: #333333;
+  --nav-icon: #333333;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  --primary: #8b5cf6; /* Neon Purple */
+  --secondary: #bb86fc;
+  --accent: #4caf50;
+  --bg-base: #111827; /* Dark Background */
+  --bg-base-100: #1f2937;
+  --bg-base-200: #2d3748;
+  --text-base: #f3f4f6;
+  --text-base-content: #f3f4f6;
+  
+  /* Navigation */
+  --nav-bg: #1f2937;
+  --nav-hover: #8b5cf6; /* Neon Purple on Hover */
+  --nav-active: #bb86fc;
+  --nav-text: #f3f4f6;
+  --nav-icon: #bb86fc;
+}
+
+/* Global Transitions */
+* {
+  @apply transition-all duration-300;
+}
+
+/* Global Button Styles */
+.btn-primary {
+  @apply bg-primary text-white;
+}
+
+.btn-primary:hover {
+  @apply bg-primary brightness-90;
+}
+
+/* Global Text Styles */
+.text-primary {
+  @apply text-[var(--primary)];
+}
+
+.bg-primary {
+  @apply bg-[var(--primary)];
+}
+
+.border-primary {
+  @apply border-[var(--primary)];
+}
+
+/* Global Navigation Styles */
+.nav-item {
+  @apply flex items-center justify-center transition-all duration-300;
+}
+
+.nav-icon {
+  @apply p-3 rounded-full transition-all duration-300;
+}
+
+/* Global Tooltip Styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip:hover::before {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background-color: #333;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Global Icon Styles */
+.devicon {
+  font-size: 2rem;
+}
+
+/* Light mode specific styles */
+[data-theme="light"] * {
+  box-shadow: none !important;
+}
+
+[data-theme="light"] .navbar {
+  @apply bg-white shadow-none;
+}
+
+[data-theme="light"] .footer {
+  @apply shadow-none;
+}
+
+[data-theme="light"] .nav-icon {
+  @apply shadow-none;
+}
+
+[data-theme="light"] .btn {
+  @apply shadow-none;
+}
+
+[data-theme="light"] .card {
+  @apply shadow-none;
+}
+
+[data-theme="light"] .colored {
+  color: #333333;
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] * {
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .colored {
+  color: #f3f4f6;
+} 
